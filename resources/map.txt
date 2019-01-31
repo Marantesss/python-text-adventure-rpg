@@ -1,0 +1,9 @@
+			LeaveCaveRoom	
+	Find5GoldRoom	EmptyCavePath	FrostTrollRoom	
+		EmptyCavePath		
+		EmptyCavePath		
+DraugrRoom	EmptyCavePath	StartingRoom	EmptyCavePath	FindDaggerRoom
+		Find5GoldRoom		
+		EmptyCavePath	MudcrabRoom	Find5GoldRoom
+FindGreatswordRoom	EmptyCavePath	EmptyCavePath		
+		SkeaverPitRoom		
