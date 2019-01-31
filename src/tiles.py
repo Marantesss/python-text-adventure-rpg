@@ -19,14 +19,14 @@ class MapTile():
     def adjacentMoves(self):
         "Returns all move actions for adjacent tiles"
         moves = []
+        if world.tileExists(self.x, self.y - 1):
+            moves.append(actions.MoveNorth())
+        if world.tileExists(self.x, self.y + 1):
+            moves.append(actions.MoveSouth())
         if world.tileExists(self.x + 1, self.y):
             moves.append(actions.MoveEast())
         if world.tileExists(self.x - 1, self.y):
             moves.append(actions.MoveWest())
-        if world.tileExists(self.x, self.y + 1):
-            moves.append(actions.MoveSouth())
-        if world.tileExists(self.x, self.y - 1):
-            moves.append(actions.MoveNorth())
         return moves
 
     def availableActions(self):

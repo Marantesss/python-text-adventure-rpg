@@ -5,11 +5,14 @@ class Player():
     def __init__(self):
         self.inventory = [items.Gold(15), items.Rock()]
         self.hp = 100
-        self.location_x, self.location_y = world.startingPosition
+        self.location_x, self.location_y = world.currentPosition
         self.victory = False
 
     def isAlive(self):
         return self.hp > 0
+
+    def getLocation(self):
+        return (self.location_x, self.location_y)
 
     '''
     We’re looking for a method in a class. For example, if action is a
@@ -29,7 +32,9 @@ class Player():
         
     def move(self, dx, dy):
         self.location_x += dx
+        world.currentPosition[0] = self.location_x
         self.location_y += dy
+        world.currentPosition[1] = self.location_y
         print(world.tileExists(self.location_x, self.location_y).introText())
     
     def moveNorth(self):

@@ -3,10 +3,12 @@ from player import Player
 
 def play():
     world.loadTiles()
+    global player
     player = Player()
     while player.isAlive() and not player.victory:
         room = world.tileExists(player.location_x, player.location_y)
         room.modifyPlayer(player)
+        world.drawBoard()
         # Check again since the room could have changed the player's state
         if player.isAlive() and not player.victory:
             print("---------------")
